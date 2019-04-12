@@ -47,7 +47,6 @@ sim.switch_silcs_lgfe_norm=True #normalizes LGFE
 sim.switch_silcs_grid=True #always should be true for silcs mc
 sim.switch_silcs_excl_grid=True #apply silcs exclusion grid
 
-
 #add the molecule to simulation
 sim.add_molecule(mol,False,True)
 
@@ -113,15 +112,12 @@ final_conf_pdb="final_"+str(lig)+".pdb"
 if(os.path.exists(final_conf_pdb)):
 	os.remove(final_conf_pdb)
 
-
 for irun in range(0,numruns):
-
 	for i in range(0,1000):
 		mol.place_in_sphere_rand_orie(center,radius)
 		lgfe=sim.get_silcs_gfe_mol(0)
 		if(lgfe<0.0):
 			break
-
 	sim.sim_radius=radius1
 	mol.set_move_probabilities(0.2,0.2,0.6)
 	mol.set_move_ranges(move_range1[0],move_range1[1],move_range1[2])
@@ -140,7 +136,7 @@ for irun in range(0,numruns):
 		if(lgfe<min_lgfe):
 			min_lgfe=lgfe
 			min_id=i
-
+			
 	mol.get_conformation_into_main(min_id)
 	
 	sim.sim_radius=radius2
