@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Perform clustering after fragment docking, fylin 2015
 
 import sys,os
 from operator import itemgetter, attrgetter, methodcaller
