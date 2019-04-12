@@ -5,7 +5,7 @@ from operator import itemgetter, attrgetter, methodcaller
 import molcal
 
 #declare some variables
-molcal_data="/home/prabhu/sw/molcal/data"
+molcal_data="/home/fylin/sw/molcal/data"
 cgenff_parfile=molcal_data+'/'+'par_all36_cgenff.prm'
 cgenff_rulefile=molcal_data+'/'+'cgenff.rules'
 silcs_rulefile=molcal_data+'/'+'silcs_classification_rules_oct14.dat'
@@ -17,8 +17,6 @@ cff.read_par_charmm(cgenff_parfile)
 #create cgenff interface object and initialize with rulefile and parfile
 cgenff=molcal.cgenff_interface()
 cgenff.init(cgenff_rulefile,cgenff_parfile)
-
-
 
 #create a simulation object
 sim=molcal.simulation()
@@ -68,11 +66,9 @@ g.category = "Silcs";
 g.atomtype = "EXCL"
 sim.add_silcs_excl_grid(g) #this line adds exclusion map
 
-
 for frag in range(1,101):
 	#create a molecule
 	mol=molcal.mcmol()
-
 	#populate molecule data structures from mol2file
 	#True argument generates rotors (rotatable bonds) needed for MC simulation
 	lig="min."+str(frag)
