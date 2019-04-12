@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Perform fragment docking with SILCS-generated maps, fylin 2015
 
 import sys,os
 from operator import itemgetter, attrgetter, methodcaller
