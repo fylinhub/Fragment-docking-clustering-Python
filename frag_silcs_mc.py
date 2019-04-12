@@ -6,7 +6,7 @@ from operator import itemgetter, attrgetter, methodcaller
 import molcal
 
 #declare some variables
-molcal_data="/home/prabhu/sw/molcal/data"
+molcal_data="/home/fylin/sw/molcal/data"
 cgenff_parfile=molcal_data+'/'+'par_all36_cgenff.prm'
 cgenff_rulefile=molcal_data+'/'+'cgenff.rules'
 silcs_rulefile=molcal_data+'/'+'silcs_classification_rules_oct14.dat'
